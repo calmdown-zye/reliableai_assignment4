@@ -1,0 +1,31 @@
+general:
+  device: cuda
+  complete_verifier: bab
+  enable_incomplete_verification: true
+  results_file: /home1/zye614/reliableai_assignment/reliableai_assignment4/logs/mnist_fc_results.txt
+
+model:
+  onnx_path: /home1/zye614/reliableai_assignment/reliableai_assignment4/models/mnist_fc.onnx
+
+data:
+  dataset: MNIST
+  start: 0
+  end: 10
+  mean: [0.0]
+  std: [1.0]
+
+specification:
+  type: lp
+  robustness_type: verified-acc
+  norm: .inf
+  epsilon: 0.01
+
+solver:
+  batch_size: 256
+  bound_prop_method: alpha-crown
+  alpha-crown:
+    iteration: 100
+    lr_alpha: 0.1
+
+bab:
+  timeout: 60
