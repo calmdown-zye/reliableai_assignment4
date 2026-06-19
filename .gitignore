@@ -1,6 +1,6 @@
+alpha-beta-CROWN/
 models/
 data/
-complete_verifier/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
